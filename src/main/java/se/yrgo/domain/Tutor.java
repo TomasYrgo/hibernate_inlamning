@@ -11,7 +11,7 @@ public class Tutor {
     private int id;
     @OneToMany
     @JoinColumn(name="TUTOR_FK")
-    private Set<Student> teachingGroup;
+    private List<Student> teachingGroup;
     private String tutorid;
     private String name;
     private int salary;
@@ -23,15 +23,15 @@ public class Tutor {
         this.tutorid = tutorid;
         this.name = name;
         this.salary = salary;
-        this.teachingGroup = new HashSet<Student>();
+        this.teachingGroup = new ArrayList<Student>();
     }
 
     public void addStudentToTeachingGroup(Student newStudent){
         this.teachingGroup.add(newStudent);
     }
 
-    public Set<Student> getTeachingGroup(){
-        Set<Student> unmodifiable = Collections.unmodifiableSet(this.teachingGroup);
+    public List<Student> getTeachingGroup(){
+        List<Student> unmodifiable = Collections.unmodifiableList(this.teachingGroup);
         return unmodifiable;
     }
 
