@@ -1,6 +1,5 @@
 package se.yrgo.domain;
 
-
 import jakarta.persistence.*;
 
 @Entity
@@ -26,7 +25,6 @@ public class Student
         this.name = name;
 
     }
-
 
     public String toString() {
         return "name:" + name ;
